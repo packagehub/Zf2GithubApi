@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phpunit bootstrap="./bootstrap.php" colors="true">
+    <testsuite name="gs/zf2-github-api">
+        <directory>./Zf2GithubApiTest</directory>
+    </testsuite>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">../src/Zf2GithubApi</directory>
+        </whitelist>
+    </filter>
+</phpunit>

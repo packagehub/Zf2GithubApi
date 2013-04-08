@@ -1,0 +1,121 @@
+<?php
+/**
+ * Zf2GithubApi Configuration
+ *
+ * If you have a ./config/autoload/ directory set up for your project, you can
+ * drop this config file in it, remove the .dist of the filename and change
+ * the values as you wish.
+ */
+$settings = array(
+    /********** Http client settings **********
+     * @see https://github.com/KnpLabs/php-github-api/blob/master/doc/customize.md#configure-the-http-client
+     ******************************************/
+
+    /**
+     * Http client class name
+     *
+     * @var string
+     * @default '\Github\HttpClient\HttpClient' or '\Github\HttpClient\CachedHttpClient',
+     *          depending on cache settings.
+     * Provided class has to implement the \Github\HttpClient\HttpClientInterface.
+     * Caching will only work, if provided http client supports it and has a setCache method.
+     * Authentification will only work, if provided http client supports it and has a authenticate method.
+     * Http client params will only work, if provided http client supports params in the constructor.
+     */
+//    'http_client.class' => '\Github\HttpClient\HttpClient',
+
+    /**
+     * Http client params
+     *
+     * @var array
+     * @default array()
+     * Provided params will be injected to the http client in the constructor.
+     */
+    'http_client.params' => array(
+        'options' => array(
+//            'timeout' => 10,
+//            'api_limit' => 5000,
+        ),
+//       'interface' => '\Buzz\Client\Curl',
+         
+    ),
+
+
+    /********** Cache settings **********
+     * @see https://github.com/KnpLabs/php-github-api/blob/master/README.markdown#cache-usage
+     ************************************/
+
+    /**
+     * Enable caching
+     *
+     * @var boolean
+     * @default false
+     */
+//    'cache.enabled' => true,
+
+    /**
+     * Cache class name
+     *
+     * @var string
+     * @default \Github\HttpClient\Cache\FilesystemCache
+     * Provided class has to implement the \Github\HttpClient\Cache\CacheInterface.
+     * Cache params will only work, if provided cache class supports params in the constructor.
+     */
+//    'cache.class' => '\Github\HttpClient\Cache\FilesystemCache',
+
+    /**
+     * Cache class params
+     *
+     * @var array
+     * @default array()
+     * Provided params will be injected to the cache class in the constructor.
+     * If the default cache class \Github\HttpClient\Cache\FilesystemCache is used a path is required.
+     */
+    'cache.params' => array(
+//        'path' => '/tmp/github-api-cache',
+    ),
+
+
+    /********** Authentification settings **********
+     * @see https://github.com/KnpLabs/php-github-api/blob/master/doc/security.md#authenticate
+     ***********************************************/
+
+    /**
+     * Enable authentification
+     *
+     * @var boolean
+     * @default false
+     */
+//    'auth.enabled' => true,
+
+    /*
+     * Authentification method
+     *
+     * @var string
+     * @default null
+     * @see https://github.com/KnpLabs/php-github-api/blob/master/doc/security.md#about-authentication-methods
+     */
+//    'auth.method' => null,
+
+    /**
+     * Authentification token or login
+     *
+     * @var string
+     * @default ''
+     * Provided token or login is used differently depending on the authentification method.
+     */
+//    'auth.token_or_login' => '',
+
+    /**
+     * Authentification password
+     *
+     * @var string
+     * @default null
+     * Provided password is used differently depending on the authentification method and might not be needed at all.
+     */
+//    'auth.password' => null,
+);
+
+return array(
+    'zf2_github_api' => $settings
+);
