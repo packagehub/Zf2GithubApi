@@ -21,10 +21,6 @@
         "php": ">=5.4",
         "knplabs/github-api": "*@dev",
         "zendframework/zend-modulemanager": "2.*",
-        "zendframework/zend-stdlib": "2.*",
         "zendframework/zend-servicemanager": "2.*"
-    },
-    "require-dev": {
-        "zendframework/zend-mvc": "2.*"
     }
 }
