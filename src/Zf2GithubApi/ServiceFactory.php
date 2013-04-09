@@ -45,7 +45,7 @@ class ServiceFactory implements FactoryInterface
             $tokenOrLogin = isset($options->auth->tokenOrLogin) ? $options->auth->tokenOrLogin : '';
             $password = isset($options->auth->tokenOrLogin) ? $options->auth->tokenOrLogin : '';
             $authMethod = isset($options->auth->tokenOrLogin) ? $options->auth->tokenOrLogin : '';
-            $client->authenticate($tokenOrLogin, $password, $authMethod)
+            $client->authenticate($tokenOrLogin, $password, $authMethod);
         }
         return $client;
     }

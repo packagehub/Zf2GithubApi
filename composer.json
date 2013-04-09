@@ -1,7 +1,7 @@
 {
     "name": "package-hub/zf2-github-api",
     "description": "ZF2 Module wrapping knplabs/github-api.",
-    "homepage": "https://github.com/GordonSchmidt/zf2-github-api",
+    "homepage": "https://github.com/PackageHub/zf2-github-api",
     "keywords": ["github", "api", "zend framework"],
     "type": "library",
     "licence": "MIT",
@@ -11,9 +11,15 @@
             "Zf2GithubApiTest": "tests/"
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git://github.com/PackageHub/php-github-api.git"
+        }
+    ],
     "require": {
         "php": ">=5.4",
-        "knplabs/github-api": "1.*",
+        "knplabs/github-api": "*@dev",
         "zendframework/zend-modulemanager": "2.*",
         "zendframework/zend-stdlib": "2.*",
         "zendframework/zend-servicemanager": "2.*"
