@@ -4,7 +4,7 @@
     "homepage": "https://github.com/PackageHub/zf2-github-api",
     "keywords": ["github", "api", "zend framework"],
     "type": "library",
-    "licence": "MIT",
+    "license": "MIT",
     "autoload": {
         "psr-0": {
             "Zf2GithubApi": "src/",
