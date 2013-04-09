@@ -45,10 +45,16 @@ class HttpFactory implements FactoryInterface
             }
         }
         $class = new \ReflectionClass($httpClientClass);
-        $httpClient = $class->newInstanceArgs($httpClientParams);
-        if (!$httpClient instanceof HttpClientInterface) {
-            throw new InvalidArgumentException('configuration error: ' . "'http_client.class'"
+        if (!$class->implementsInterface('\Github\HttpClient\HttpClientInterface')) {
+            throw new InvalidArgumentException('configuration error: "http_client.class" '
                 . 'has to implement \Github\HttpClient\HttpClientInterface');
+        }
+        try {
+            $httpClient = $class->newInstanceArgs($httpClientParams);
+        } catch (\ReflectionException $e) {
+            throw new InvalidArgumentException('configuration error: "http_client.params" '
+                . 'have to be valid constructor params for "http_client.class" and the '
+                . 'constructor has to be public');
         }
 
         // set http client cache if used

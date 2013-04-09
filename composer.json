@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3",
+        "php": ">=5.3.4",
         "knplabs/github-api": "*@dev",
         "zendframework/zend-modulemanager": "2.*",
         "zendframework/zend-servicemanager": "2.*"

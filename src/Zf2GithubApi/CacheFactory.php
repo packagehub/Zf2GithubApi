@@ -44,10 +44,16 @@ class CacheFactory implements FactoryInterface
             }
         }
         $class = new \ReflectionClass($cacheClass);
-        $cache = $class->newInstanceArgs($cacheParams);
-        if (!$cache instanceof CacheInterface) {
-            throw new InvalidArgumentException('configuration error: ' . "'cache.class'"
+        if (!$class->implementsInterface('\Github\HttpClient\Cache\CacheInterface')) {
+            throw new InvalidArgumentException('configuration error: "cache.class" '
                 . 'has to implement \Github\HttpClient\Cache\CacheInterface');
+        }
+        try {
+            $cache = $class->newInstanceArgs($cacheParams);
+        } catch (\ReflectionException $e) {
+            throw new InvalidArgumentException('configuration error: "cache.params" '
+                . 'have to be valid constructor params for "cache.class" and the '
+                . 'constructor has to be public');
         }
         return $cache;
     }
